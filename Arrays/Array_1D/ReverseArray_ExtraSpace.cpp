@@ -12,7 +12,6 @@ int* Reverse(int * arr,int n){
     }
 
     return arr;
-
 }
 
 int main(){

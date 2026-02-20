@@ -8,8 +8,8 @@ int* Reverse(int *arr,int n){
         start++;
         end--;
     }
-
     return arr;
+
 }
 int main(){
     int a[]={5,4,3,9,2};

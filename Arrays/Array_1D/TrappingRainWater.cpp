@@ -26,7 +26,7 @@ int watertrapped(int* height, int n) {
             total_water += water_at_i;
         }
     }
-
+    
     return total_water;
 }
 
