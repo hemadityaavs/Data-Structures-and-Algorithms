@@ -1,39 +1,41 @@
 #include<iostream>
-
+#include<algorithm>
 using namespace std;
 
-void SpiralMatrix(int (*arr)[5],int m, int n){
-    int sr=0,er=m-1,sc=0,ec=n-1;
+void PrintSpiralMatrix(int (*ptr)[4],int m, int n){
+    int sr=0,sc=0,er=m-1,ec=n-1,j,i;
 
-    while((sr<=er)&&(sc<=ec)){
-
-    for(int j=sc;j<=ec;j++){
-        cout<<arr[sr][j]<<" ";
-    }
-
-    for(int i=sr+1;i<=er;i++){
-        cout<<arr[i][ec]<<" ";
-    }
-
-    for(int j=ec-1;j>=sc;j--){
-        if(sc==ec){
-            break;
+    while(sr<=er && sc<=ec){
+        for(j=sc;j<=ec;j++){
+            cout<<ptr[sr][j]<<" ";
         }
-        cout<<arr[er][j]<<" ";
-    }
+        for(i=sr+1;i<=er;i++){
+            cout<<ptr[i][ec]<<" ";
+        }
 
-    for(int i=er-1;i>=sr;i--){
-        if(sr==er){
-            break;}
-        cout<<arr[i][sc]<<" ";
+        if(sc<ec){
+        for(j=ec-1;j>=sc;j--){
+    
+            cout<<ptr[er][j]<<" ";
+        }}
+
+        if(sr<er){
+        for(i=er-1;i>sr;i--){
+
+            cout<<ptr[i][sc]<<" ";
+        }
     }
-        sr++;er--;sc++;ec--;
+        sc++; ec--;sr++;er--;
+    }
 }
-}
+
 int main(){
-    int arr[5][5]={{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},{21,22,23,24,25}};
-
-    SpiralMatrix(arr,5,5);
+    int arr[3][4]={
+        {1,2,3,4},
+        {5,6,7,8},
+        {9,10,11,12},
+    };
+    PrintSpiralMatrix(arr,3,4);
 
     return 0;
 }
