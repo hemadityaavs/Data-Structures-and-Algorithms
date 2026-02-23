@@ -20,7 +20,7 @@ void PrintSpiralMatrix(int (*ptr)[4],int m, int n){
         }}
 
         if(sr<er){
-        for(i=er-1;i>=sr;i--){
+        for(i=er-1;i>sr;i--){
 
             cout<<ptr[i][sc]<<" ";
         }
@@ -30,7 +30,7 @@ void PrintSpiralMatrix(int (*ptr)[4],int m, int n){
 }
 
 int main(){
-    int arr[4][4]={
+    int arr[3][4]={
         {1,2,3,4},
         {5,6,7,8},
         {9,10,11,12},
