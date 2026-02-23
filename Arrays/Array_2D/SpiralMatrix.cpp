@@ -7,23 +7,23 @@ void SpiralMatrix(int (*arr)[5],int m, int n){
 
     while((sr<=er)&&(sc<=ec)){
 
-    for(int j=sc;j<ec;j++){
+    for(int j=sc;j<=ec;j++){
         cout<<arr[sr][j]<<" ";
     }
 
-    for(int i=sr;i<er;i++){
+    for(int i=sr+1;i<=er;i++){
         cout<<arr[i][ec]<<" ";
     }
 
-    for(int j=ec;j>sc;j--){
-        if(sr==er){
+    for(int j=ec-1;j>=sc;j--){
+        if(sc==ec){
             break;
         }
         cout<<arr[er][j]<<" ";
     }
 
-    for(int i=er;i>sc;i--){
-        if(sc==ec){
+    for(int i=er-1;i>=sr;i--){
+        if(sr==er){
             break;}
         cout<<arr[i][sc]<<" ";
     }
