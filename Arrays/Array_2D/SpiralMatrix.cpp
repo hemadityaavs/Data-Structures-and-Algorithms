@@ -6,28 +6,25 @@ void PrintSpiralMatrix(int (*ptr)[4],int m, int n){
     int sr=0,sc=0,er=m-1,ec=n-1,j,i;
 
     while(sr<=er && sc<=ec){
-        for(j=sc;j<ec;j++){
+        for(j=sc;j<=ec;j++){
             cout<<ptr[sr][j]<<" ";
         }
-        for(i=sr;i<er;i++){
+        for(i=sr+1;i<=er;i++){
             cout<<ptr[i][ec]<<" ";
         }
 
-        for(j=ec;j>sc;j--){
-            if(sc==ec){
-                break;
-            }
+        if(sc<ec){
+        for(j=ec-1;j>=sc;j--){
+    
             cout<<ptr[er][j]<<" ";
-        }
+        }}
 
-        for(i=er;i>sr;i--){
-            if(sr==er){
-                break;
-            }
+        if(sr<er){
+        for(i=er-1;i>=sr;i--){
 
             cout<<ptr[i][sc]<<" ";
         }
-
+    }
         sc++; ec--;sr++;er--;
     }
 }
